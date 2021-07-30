@@ -24,7 +24,7 @@ Requirements:
  */
 
 function squareSort(nums) {
-
+  // if all nums above zero return squared array...easy peasy 
   if (nums[0] > 0) {
     let result = nums.map(num => num ** 2);
     // console.log("result", result)
@@ -34,14 +34,18 @@ function squareSort(nums) {
   let pos = [];
   let negs = [];
 
-
+  // break array in two, positive and negative
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] < 0) {
+      // unshift because it will be reversed if you push and lose its sortedness 
       negs.unshift(nums[i] ** 2);
     } else {
       pos.push(nums[i] ** 2);
     }
   }
+
+  
+  // helper to merge two sorted arrays
   mergeAndSort(negs, pos);
 }
 
@@ -69,7 +73,6 @@ function mergeAndSort(arr1, arr2) {
 
     current++;
   }
-  console.log(merged)
   return merged;
 }
-squareSort([-3, -2, 0,1, 1, 2, 3, 4, 5])
+squareSort([-3, -2, 0, 1, 1, 2, 3, 4, 5])
