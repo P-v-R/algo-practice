@@ -4,22 +4,20 @@
  */
  var reverse = function(x) {
   let isNeg = false;
-  if (x >= 2**31-1 || x <= (2**31) * -1) {
-    return 0
-  }
+  
   if(x < 0) {
-      isNeg = true;
-      x = (x * -1)
+    isNeg = true;
+    x = (x * -1)
   }
   result = `${x}`.split("").reverse().join("")
   if (isNeg) {
     console.log(+`-${result}`)
-    return +`-${result}`
+    result = `-${result}`
   }
-  console.log(result)
+  console.log("------>>>>", +result, +result < (Math.pow(2, 31) * -1) )
+  if (+result < (Math.pow(2, 31) * -1) || +result > Math.pow(2, 31) - 1) return 0;
   return +result
 };
 
 
-
-reverse(1534236469)
+reverse(-2147483648)
