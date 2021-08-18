@@ -17,14 +17,14 @@ var lengthOfLongestSubstring = function (s) {
       } else {
         if(count < current.length) count = current.length;
         console.log('pt ->', ptr)
-        break
+        break;
       }
     }
   }
-  console.log("count ->", count)
+  console.log("count ->", count);
 };
 
-lengthOfLongestSubstring("ab")
+lengthOfLongestSubstring("ab");
 
 
 

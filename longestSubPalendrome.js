@@ -22,7 +22,6 @@ var longestPalindrome = function (s) {
   function isPalendrome(str) {
     let len = str.length
     for (var i = 0; i < len / 2; i++) {
-      console.log("from innter func ->",str[i], str[len - 1 - i] )
       if (str[i] !== str[len - 1 - i]) { // As long as the characters from each part match, the FOR loop will go on
         return false; // When the characters don't match anymore, false is returned and we exit the FOR loop
       }
@@ -37,7 +36,6 @@ var longestPalindrome = function (s) {
     while (ptr <= s.length) {
       if (s[i] === s[ptr]) {
         let temp = s.slice(i, ptr + 1)
-        console.log(">>>", temp, isPalendrome(temp))
         if (isPalendrome(temp) && temp.length > longest.length) {
           longest = temp
         }
@@ -46,7 +44,7 @@ var longestPalindrome = function (s) {
     }
   }
   if(!longest) longest = s[0]
-  console.log("longst ----->", longest)
+  // console.log("longst ----->", longest)
   return longest
 };
 
